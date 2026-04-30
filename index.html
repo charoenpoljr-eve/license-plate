@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เจริญผล ทะเบียน | Partnership Dashboard</title>
+    <title>เจริญผล ทะเบียน | 100K Strategy Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -22,7 +22,7 @@
         .header { max-width: 1200px; margin: 0 auto 50px auto; padding: 20px 0; border-bottom: 2px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -1px; text-transform: uppercase; }
         .logo span { color: var(--red); }
-        .partner-tag { background: var(--black); color: var(--white); padding: 5px 15px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+        .ver-tag { font-size: 12px; color: #999; font-family: 'Poppins'; font-weight: bold; }
 
         .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
@@ -30,14 +30,14 @@
         .card h2 { font-size: 14px; color: var(--red); font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; margin-bottom: 25px; border-bottom: 1px solid var(--gray-light); padding-bottom: 15px; display: flex; align-items: center; }
         .card h2 i { margin-right: 12px; }
 
-        /* Investment Split Style */
-        .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
-        .split-box { background: var(--gray-light); padding: 20px; border-radius: 8px; text-align: center; border-bottom: 3px solid var(--border); }
-        .split-box.active { border-bottom-color: var(--red); }
-        .split-name { font-weight: 600; font-size: 18px; margin-bottom: 5px; }
-        .split-val { font-family: 'Poppins'; font-size: 24px; font-weight: 700; color: var(--red); }
+        /* Partner Section */
+        .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .partner-box { background: var(--gray-light); padding: 20px; border-radius: 8px; text-align: center; border-bottom: 3px solid var(--border); }
+        .partner-box.active { border-bottom-color: var(--red); }
+        .partner-name { font-weight: 600; font-size: 18px; margin-bottom: 5px; }
+        .partner-val { font-family: 'Poppins'; font-size: 24px; font-weight: 700; color: var(--red); }
 
-        /* Budget List Style */
+        /* Budget List Section */
         .budget-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed var(--border); font-size: 15px; }
         .budget-row span:last-child { font-family: 'Poppins'; font-weight: 700; color: var(--black); }
         .budget-row.highlight span:last-child { color: var(--red); }
@@ -59,28 +59,28 @@
 
     <div class="header">
         <div class="logo">เจริญผล <span>ทะเบียน</span></div>
-        <div class="partner-tag">อีฟ & เอิท // PARTNERSHIP</div>
+        <div class="ver-tag">PROFIT STRATEGY // 100K</div>
     </div>
 
     <div class="container">
         
         <div class="card">
-            <h2><i class="fa-solid fa-user-group"></i> 100K INVESTMENT</h2>
-            <div class="split-grid">
-                <div class="split-box active">
-                    <div class="split-name">อีฟ</div>
-                    <div class="split-val">50,000</div>
+            <h2><i class="fa-solid fa-user-group"></i> 18,500 INVESTMENT</h2>
+            <div class="partner-grid">
+                <div class="partner-box active">
+                    <div class="partner-name">อีฟ</div>
+                    <div class="partner-val">9,250</div>
                 </div>
-                <div class="split-box active">
-                    <div class="split-name">เอิท</div>
-                    <div class="split-val">50,000</div>
+                <div class="partner-box active">
+                    <div class="partner-name">เอิท</div>
+                    <div class="partner-val">9,250</div>
                 </div>
             </div>
             <div class="budget-list">
-                <div class="budget-row highlight"><span>ทะเบียน (30-40 ใบ)</span><span>80,000</span></div>
-                <div class="budget-row"><span>เงินสำรอง (Buffer)</span><span>10,000</span></div>
-                <div class="budget-row"><span>ค่าโอน / เอกสาร</span><span>8,000</span></div>
-                <div class="budget-row"><span>Boost Post (Ads)</span><span>2,000</span></div>
+                <div class="budget-row highlight"><span>ทะเบียน (5 ใบ)</span><span>12,500</span></div>
+                <div class="budget-row"><span>เงินสำรอง (Buffer)</span><span>3,000</span></div>
+                <div class="budget-row"><span>ค่าโอน / เอกสาร</span><span>2,000</span></div>
+                <div class="budget-row"><span>Boost Post (Ads)</span><span>1,000</span></div>
             </div>
         </div>
 
@@ -90,14 +90,14 @@
                 <i class="fa-solid fa-car-side"></i>
                 <div class="item-text">
                     <h3>Accessible Lucky</h3>
-                    <p>เลขสวยพอดี + ความหมายดี ในราคาที่คนตัดสินใจง่าย</p>
+                    <p>เลขสวย + ความหมายดี ในราคาที่คนตัดสินใจง่าย</p>
                 </div>
             </div>
             <div class="item">
                 <i class="fa-solid fa-bolt"></i>
                 <div class="item-text">
                     <h3>Competitive Edge</h3>
-                    <p>ไม่แข่งแพงที่สุด แต่แข่ง "คุ้มค่าที่สุด" เพื่อหมุนของไว</p>
+                    <p>ไม่ต้องแข่งแพงที่สุด แต่เอาคุ้มค่าที่สุด เพื่อหมุนของไว</p>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
                 <i class="fa-solid fa-circle-play"></i>
                 <div class="item-text">
                     <h3>Week 1-2: Setup</h3>
-                    <p>เปิดเพจ, ทำเทมเพลตโพสต์, ลงของ 15 ใบแรก</p>
+                    <p>เปิดเพจ, ทำเทมเพลตโพสต์, ลงของ 5 ใบแรก</p>
                 </div>
             </div>
             <div class="item">
@@ -136,7 +136,7 @@
         <div class="result-text">งบ 100K = <span>เริ่มได้จริง</span></div>
         <div class="profit-text">
             ถ้าเน้นเลขสวย + หมุนไว → ทำกำไรได้ตั้งแต่เดือน-สองเดือนแรก<br>
-            <span style="font-size: 12px; opacity: 0.5; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; display: block;">Jerernpol Plate Strategy Framework // By Eve & Earth</span>
+            <span style="font-size: 12px; opacity: 0.5; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; display: block;">Charoenpol Plate Strategy Framework // By Eve & Earth</span>
         </div>
     </div>
 
