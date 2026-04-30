@@ -3,161 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เจริญผล ทะเบียน | Strategic Plan</title>
+    <title>เจริญผล ทะเบียน | Smart Choice Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* 1. Global Setup (Racing White Theme) */
         :root {
-            --f1-red: #E10600;
-            --pure-white: #FFFFFF;
-            --soft-gray: #F0F0F0;
-            --dark-text: #15151E;
-            --sub-text: #5E5E66;
+            --red: #E10600; /* F1 Red */
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #F6F6F6;
+            --border: #E0E0E0;
+            --shadow: rgba(0,0,0,0.06);
         }
+
+        * { box-sizing: border-box; }
 
         body {
-            font-family: 'Tahoma', sans-serif;
-            background-color: var(--pure-white);
-            color: var(--dark-text);
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
             margin: 0;
-            padding: 30px;
+            padding: 20px;
         }
 
-        /* Header แบบ F1 */
+        /* 2. Header (Minimal Racing) */
         .header {
-            border-top: 6px solid var(--f1-red);
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
             padding: 20px 0;
-            margin-bottom: 50px;
+            border-bottom: 2px solid var(--border);
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
         }
 
         .logo {
-            font-size: 32px;
-            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
             letter-spacing: -1px;
             text-transform: uppercase;
         }
 
-        .logo span { color: var(--f1-red); }
+        .logo span { color: var(--red); }
+        .ver-tag { font-size: 12px; color: var(--border); font-family: 'Poppins'; }
 
+        /* 3. Container & Card Setup */
         .container {
             max-width: 1200px;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        /* Card สไตล์ Minimal Grid */
+        /* Card พื้นฐาน */
         .card {
-            border: 1px solid var(--soft-gray);
-            padding: 25px;
-            background: var(--pure-white);
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
         }
 
-        .card-header {
-            color: var(--f1-red);
-            font-size: 12px;
-            font-weight: bold;
+        .card:hover { transform: translateY(-5px); }
+
+        /* หัวข้อ Card */
+        .card h2 {
+            font-size: 14px;
+            color: var(--red);
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
-            display: block;
-            border-bottom: 1px solid var(--soft-gray);
-            padding-bottom: 10px;
-        }
-
-        .title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .desc {
-            font-size: 14px;
-            color: var(--sub-text);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        /* Budget Table */
-        .row {
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 15px;
             display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--soft-gray);
-            font-size: 14px;
+            align-items: center;
+        }
+        
+        .card h2 i { margin-right: 12px; font-size: 16px; }
+
+        /* รายการเนื้อหาใน Card */
+        .item { display: flex; align-items: start; margin-bottom: 20px; }
+        .item i { font-size: 18px; color: var(--black); margin-right: 15px; margin-top: 3px; }
+        .item-text h3 { margin: 0; font-size: 16px; font-weight: 600; }
+        .item-text p { margin: 2px 0 0 0; font-size: 14px; color: #555; font-weight: 300; }
+
+        /* เน้นตัวเลข (Budget/Product Mix) */
+        .number-focus {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            border-bottom: 3px solid var(--red);
+            width: fit-content;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
         }
 
-        .val {
-            font-weight: bold;
-            color: var(--f1-red);
+        /* 4. การจัดสรรงบ (Big Numbers) */
+        .budget-card { grid-column: span 1; }
+        @media (min-width: 900px) { .budget-card { grid-column: span 2; } }
+
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-        .footer-bar {
-            margin-top: 60px;
-            padding: 40px;
-            background: var(--dark-text);
-            color: var(--pure-white);
+        .budget-item {
+            background: var(--gray-light);
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
         }
 
-        .slogan {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .budget-label { font-size: 12px; text-transform: uppercase; color: #888; letter-spacing: 1px; }
+        .budget-val { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--red); margin: 5px 0; }
+
+        /* 5. Footer (Black Banner) */
+        .footer-banner {
+            max-width: 1200px;
+            margin: 60px auto 30px auto;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
         }
+
+        .slogan {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .slogan span { color: var(--red); }
+        .brand-name { font-size: 14px; color: #777; margin-top: 10px; }
+
     </style>
 </head>
 <body>
 
     <div class="header">
         <div class="logo">เจริญผล <span>ทะเบียน</span></div>
-        <div style="font-size: 14px; font-weight: bold;">STRATEGY FRAMEWORK 100K</div>
+        <div class="ver-tag">BUDGET FRAMEWORK v1.1 | 100K</div>
     </div>
 
     <div class="container">
         
         <div class="card">
-            <span class="card-header">01 STRATEGY</span>
-            <span class="title">กลุ่มเป้าหมาย</span>
-            <span class="desc">คนมีรถทั่วไปที่อยากได้เลขสวยในราคาที่ "จ่ายไหว"</span>
-            
-            <span class="title">จุดแข็ง</span>
-            <span class="desc">คัดเลขสวยพอดี + มีความหมาย + โอนไวถึงหน้าบ้าน</span>
+            <h2><i class="fa-solid fa-gauge-high"></i>CORE STRATEGY</h2>
+            <div class="item">
+                <i class="fa-solid fa-rocket"></i>
+                <div class="item-text">
+                    <h3>Affordable Luxury</h3>
+                    <p>ทะเบียน “ดูดี + มงคล” ในราคาที่จ่ายไหว</p>
+                </div>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-users-viewfinder"></i>
+                <div class="item-text">
+                    <h3>Target</h3>
+                    <p>คนมีรถทั่วไปที่ต้องการอัปเกรดบารมี</p>
+                </div>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-comments"></i>
+                <div class="item-text">
+                    <h3>Channels</h3>
+                    <p>FB Page (แบรนด์), Line (ปิดการขาย)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card budget-card">
+            <h2><i class="fa-solid fa-money-bill-wave"></i>BUDGET ALLOCATION (100K)</h2>
+            <div class="budget-grid">
+                <div class="budget-item">
+                    <div class="budget-label">ทะเบียน (20-30 ใบ)</div>
+                    <div class="budget-val">60,000.-</div>
+                </div>
+                <div class="budget-item">
+                    <div class="budget-label">เงินหมุน (Working Cap)</div>
+                    <div class="budget-val">20,000.-</div>
+                </div>
+                <div class="budget-item">
+                    <div class="budget-label">Boost Post (Ads)</div>
+                    <div class="budget-val">10,000.-</div>
+                </div>
+                <div class="budget-item">
+                    <div class="budget-label">Branding/Content</div>
+                    <div class="budget-val">5,000.-</div>
+                </div>
+            </div>
         </div>
 
         <div class="card">
-            <span class="card-header">02 BUDGET (100,000 THB)</span>
-            <div class="row"><span>สินค้า (ทะเบียน 20-30 ใบ)</span><span class="val">60,000.-</span></div>
-            <div class="row"><span>เงินหมุนเวียนสำรอง</span><span class="val">20,000.-</span></div>
-            <div class="row"><span>ยิงโฆษณา FB/IG</span><span class="val">10,000.-</span></div>
-            <div class="row"><span>CI & รูปภาพ Content</span><span class="val">5,000.-</span></div>
-            <div class="row"><span>จิปาถะ / ค่าโอน</span><span class="val">5,000.-</span></div>
+            <h2><i class="fa-solid fa-boxes-packing"></i>PRODUCT MIX</h2>
+            <div class="number-focus">50%</div>
+            <p style="font-size:14px; color:#555; margin: 0 0 20px 0;"><strong>เลขขายง่าย:</strong> 289 / 456 / 168 (เน้นตัดสินใจเร็ว)</p>
+            
+            <div class="number-focus">30%</div>
+            <p style="font-size:14px; color:#555; margin: 0 0 20px 0;"><strong>เลขดูสวย:</strong> 789 / 678 / 8899 (สายซิ่ง)</p>
+            
+            <div class="number-focus">20%</div>
+            <p style="font-size:14px; color:#555; margin: 0;"><strong>เลขน่าลุ้น:</strong> เลขคู่ / เลขตองเกรดกลาง</p>
         </div>
 
         <div class="card">
-            <span class="card-header">03 EXECUTION (30 DAYS)</span>
-            <span class="title">สัปดาห์ 1-2: Setup</span>
-            <span class="desc">ทำรูปเทมเพลต / ลงของ 15 ใบแรก / โพสต์รัวๆ วันละ 5-10 โพสต์</span>
-            
-            <span class="title">สัปดาห์ 3-4: Scale</span>
-            <span class="desc">ยิงแอดเลขที่คนถามเยอะ / ปิดการขาย / เอาทุนคืนมาหมุนซื้อเพิ่ม</span>
-        </div>
-
-        <div class="card">
-            <span class="card-header">04 PRODUCT MIX</span>
-            <span class="title">50% เลขขายง่าย</span>
-            <span class="desc">289 / 456 / 168 (เน้นตัดสินใจเร็ว)</span>
-            
-            <span class="title">30% เลขเรียง/เลขคู่</span>
-            <span class="desc">678 / 789 / 8899 (เน้นสายซิ่ง)</span>
+            <h2><i class="fa-solid fa-flag-checkered"></i>EXECUTION PLAN (30 วัน)</h2>
+            <div class="item">
+                <i class="fa-solid fa-toolbox"></i>
+                <div class="item-text">
+                    <h3>Week 1-2: Setup</h3>
+                    <p>เปิดเพจ, ทำรูปโปรไฟล์/เทมเพลต, ลงของ 15 ใบแรก</p>
+                </div>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-bullseye"></i>
+                <div class="item-text">
+                    <h3>Week 3-4: Scale</h3>
+                    <p>ยิง Ads โพสต์ที่คนทักเยอะ, ปิดการขาย, เอาทุนคืนมาหมุนเพิ่ม</p>
+                </div>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-trophy"></i>
+                <div class="item-text">
+                    <h3>Profit Formula</h3>
+                    <p>ซื้อ 2,000 -> ขาย 4,000 | กำไร ~40,000 บ./เดือน</p>
+                </div>
+            </div>
         </div>
 
     </div>
 
-    <div class="footer-bar">
-        <div class="slogan">ซื้อง่าย ส่งไว ใส่แล้วเท่ - เจริญผล ทะเบียน</div>
+    <div class="footer-banner">
+        <div class="slogan">ซื้อง่าย <span>//</span> ส่งไว <span>//</span> ใส่แล้วเท่</div>
+        <div class="brand-name">"เลือกเลขที่ใช่ ในราคาที่ชอบ" - เจริญพล ทะเบียน</div>
     </div>
 
 </body>
