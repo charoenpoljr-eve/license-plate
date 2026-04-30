@@ -3,116 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เจริญผล ทะเบียน | 100K Strategy</title>
+    <title>เจริญผล ทะเบียน | แผนธุรกิจ 100K</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --red: #E10600;
+            --f1-red: #E10600;
             --black: #15151E;
             --white: #FFFFFF;
-            --gray-light: #F6F6F6;
-            --border: #E0E0E0;
+            --gray-bg: #F8F9FA;
+            --border: #EEEEEE;
         }
 
         body { font-family: 'Prompt', sans-serif; background-color: var(--white); color: var(--black); margin: 0; padding: 20px; }
-        .header { max-width: 1000px; margin: 0 auto 40px auto; padding: 20px 0; border-bottom: 2px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; }
-        .logo span { color: var(--red); }
         
-        /* Partner Tag */
-        .partner-tag { background: var(--black); color: var(--white); padding: 5px 15px; border-radius: 20px; font-size: 13px; font-weight: 600; }
-        .partner-tag span { color: var(--red); }
+        /* Header */
+        .header { max-width: 1100px; margin: 0 auto 30px auto; padding: 20px 0; border-bottom: 3px solid var(--f1-red); display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 700; text-transform: uppercase; }
+        .logo span { color: var(--f1-red); }
+        .partner-box { background: var(--black); color: var(--white); padding: 8px 20px; border-radius: 4px; font-weight: 600; }
 
-        .container { max-width: 1000px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
 
-        .card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .card h2 { font-size: 13px; color: var(--red); font-family: 'Poppins'; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 20px 0; border-bottom: 1px solid var(--gray-light); padding-bottom: 10px; }
+        .card { border: 1px solid var(--border); padding: 25px; border-radius: 8px; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .card h2 { font-size: 13px; color: var(--f1-red); font-family: 'Poppins'; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 20px 0; border-bottom: 1px solid var(--gray-bg); padding-bottom: 10px; }
 
-        /* Budget Layout */
-        .budget-main { grid-column: span 1; }
-        @media (min-width: 800px) { .budget-main { grid-column: span 2; } }
-        
-        .budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .b-box { background: var(--gray-light); padding: 15px; border-radius: 8px; text-align: left; border-left: 4px solid var(--border); }
-        .b-box.highlight { border-left-color: var(--red); background: #fff5f5; }
-        .b-label { font-size: 11px; color: #888; text-transform: uppercase; font-weight: bold; }
-        .b-val { font-family: 'Poppins'; font-size: 22px; font-weight: 700; color: var(--black); margin: 5px 0; }
-        .b-val span { font-size: 14px; color: var(--red); }
-        .b-desc { font-size: 12px; color: #666; line-height: 1.4; }
+        /* Investment Split */
+        .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .split-item { background: var(--gray-bg); padding: 15px; border-radius: 6px; text-align: center; }
+        .name { font-weight: 700; font-size: 18px; margin-bottom: 5px; color: var(--black); }
+        .amount { font-family: 'Poppins'; font-size: 24px; font-weight: 700; color: var(--f1-red); }
 
-        /* Split Section */
-        .split-card { background: #f9f9f9; text-align: center; border: 2px dashed var(--border); }
-        .split-val { font-family: 'Poppins'; font-size: 32px; font-weight: 700; color: var(--black); }
-        .split-val span { color: var(--red); }
+        /* Budget Details */
+        .budget-list { font-size: 14px; }
+        .b-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--border); }
+        .b-row span:last-child { font-weight: 700; font-family: 'Poppins'; }
 
-        .footer-banner { max-width: 1000px; margin: 50px auto; background: var(--black); color: var(--white); padding: 40px; border-radius: 12px; text-align: center; border-bottom: 6px solid var(--red); }
-        .f-top { font-size: 22px; font-weight: 600; margin-bottom: 10px; }
-        .f-top span { color: var(--red); }
-        .f-bottom { font-size: 15px; color: #aaa; font-weight: 300; }
+        /* Steps & Mix */
+        .step-item { display: flex; gap: 15px; margin-bottom: 15px; }
+        .step-num { color: var(--f1-red); font-family: 'Poppins'; font-weight: 700; font-size: 18px; }
+        .step-text h4 { margin: 0; font-size: 15px; }
+        .step-text p { margin: 2px 0 0 0; font-size: 13px; color: #666; }
+
+        .mix-box { background: var(--black); color: var(--white); padding: 15px; border-radius: 6px; margin-top: 10px; }
+        .mix-row { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 13px; }
+
+        /* Footer */
+        .footer-banner { max-width: 1100px; margin: 40px auto; background: var(--black); color: var(--white); padding: 40px; text-align: center; border-radius: 8px; border-bottom: 10px solid var(--f1-red); }
+        .f-title { font-size: 26px; font-weight: 700; margin-bottom: 10px; }
+        .f-title span { color: var(--f1-red); }
+        .f-sub { font-size: 16px; opacity: 0.7; font-weight: 300; }
     </style>
 </head>
 <body>
 
     <div class="header">
         <div class="logo">เจริญผล <span>ทะเบียน</span></div>
-        <div class="partner-tag">PARTNERSHIP: <span>อีฟ & เอิท</span></div>
+        <div class="partner-box">อีฟ & เอิท</div>
     </div>
 
     <div class="container">
         
-        <div class="card budget-main">
-            <h2><i class="fa-solid fa-chart-line"></i> BUDGET ALLOCATION (100K)</h2>
-            <div class="budget-grid">
-                <div class="b-box highlight">
-                    <div class="b-label">1. ทะเบียน (STOCK)</div>
-                    <div class="b-val">80,000 <span>THB</span></div>
-                    <div class="b-desc">เป้า 30–40 ใบ (เฉลี่ย 2,000–2,500/ใบ)<br><strong>"ของเยอะ = โอกาสขายสูง"</strong></div>
+        <div class="card" style="grid-column: span 1;">
+            <h2><i class="fa-solid fa-wallet"></i> 100K INVESTMENT</h2>
+            <div class="split-grid">
+                <div class="split-item">
+                    <div class="name">อีฟ</div>
+                    <div class="amount">50,000</div>
                 </div>
-                <div class="b-box">
-                    <div class="b-label">2. เงินสำรอง (BUFFER)</div>
-                    <div class="b-val">10,000 <span>THB</span></div>
-                    <div class="b-desc">กันไว้สำหรับดีลเร่ง เจอเลขดีต้องรีบคว้า หรือสำรองช่วงรอโอน</div>
+                <div class="split-item">
+                    <div class="name">เอิท</div>
+                    <div class="amount">50,000</div>
                 </div>
-                <div class="b-box">
-                    <div class="b-label">3. ค่าโอน / จิปาถะ</div>
-                    <div class="b-val">8,000 <span>THB</span></div>
-                    <div class="b-desc">ค่าธรรมเนียมขนส่ง, ค่าดำเนินการ และค่าเดินทาง</div>
-                </div>
-                <div class="b-box">
-                    <div class="b-label">4. BOOST POST (ADS)</div>
-                    <div class="b-val">2,000 <span>THB</span></div>
-                    <div class="b-desc">ยิงเฉพาะโพสต์ที่ "เลขสวย/ขายดีจริง" ส่วนที่เหลือเน้นโพสต์กลุ่ม</div>
-                </div>
+            </div>
+            <div class="budget-list">
+                <div class="b-row"><span>ทะเบียน (30-40 ใบ)</span><span>80,000</span></div>
+                <div class="b-row"><span>เงินสำรอง (Buffer)</span><span>10,000</span></div>
+                <div class="b-row"><span>ค่าโอน / เอกสาร</span><span>8,000</span></div>
+                <div class="b-row"><span>Boost Post (Ads)</span><span>2,000</span></div>
             </div>
         </div>
 
-        <div class="card split-card">
-            <h2><i class="fa-solid fa-user-group"></i> INVESTMENT SPLIT</h2>
-            <div class="b-label" style="margin-bottom:10px;">หารสอง (คนละ 50%)</div>
-            <div class="split-val">50,000 <span>/ ท่าน</span></div>
-            <p style="font-size: 14px; margin-top: 15px; color: #555;">
-                <i class="fa-solid fa-check-circle" style="color:var(--red);"></i> <strong>อีฟ</strong> &nbsp;&nbsp; 
-                <i class="fa-solid fa-check-circle" style="color:var(--red);"></i> <strong>เอิท</strong>
-            </p>
+        <div class="card">
+            <h2><i class="fa-solid fa-layer-group"></i> PRODUCT MIX</h2>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">เน้นปริมาณ กระจายความเสี่ยง (Self-Sell)</p>
+            <div class="mix-box">
+                <div class="mix-row"><span>50% เลขขายง่าย (289/456)</span><span>15-20 ใบ</span></div>
+                <div class="mix-row"><span>30% เลขสวยสายซิ่ง (789/678)</span><span>9-12 ใบ</span></div>
+                <div class="mix-row"><span>20% เลขคู่/เลขตองกลาง</span><span>6-8 ใบ</span></div>
+            </div>
+            <p style="font-size: 12px; color: var(--f1-red); margin-top: 10px; font-weight: 600;">*เฉลี่ยต้นทุน 2,000 - 2,500 ต่อใบ</p>
         </div>
 
-        <div class="card">
-            <h2><i class="fa-solid fa-lightbulb"></i> KEY FOCUS</h2>
-            <p style="font-size: 14px; line-height: 1.8;">
-                • เน้น <strong>Self-Sell</strong> ซื้อสต็อกเอง ขายเอง<br>
-                • เน้น <strong>Volume</strong> จำนวนชิ้นเยอะเพื่อกระจายความเสี่ยง<br>
-                • เน้น <strong>Speed</strong> หมุนเงินให้ไวภายใน 30-60 วัน
-            </p>
+        <div class="card" style="grid-column: span 1;">
+            <h2><i class="fa-solid fa-trophy"></i> 5 WINNING STEPS</h2>
+            <div class="step-item">
+                <div class="step-num">01</div>
+                <div class="step-text"><h4>สวยจบ งบคนทำงาน</h4><p>ขายเลขหลักพันที่คนตัดสินใจซื้อง่าย</p></div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">02</div>
+                <div class="step-text"><h4>รูปต้องดูแพง</h4><p>ถ่ายคู่รถหรู คุมโทนเพจให้พรีเมียม</p></div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">03</div>
+                <div class="step-text"><h4>จองง่าย จ่ายจบ</h4><p>มัดจำถูก ล็อคเลขไว ปิดการขายในวันเดียว</p></div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">04</div>
+                <div class="step-text"><h4>ส่งถึงหน้าบ้าน</h4><p>จัดการเอกสารให้ครบ ส่งป้ายถึงมือลูกค้า</p></div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">05</div>
+                <div class="step-text"><h4>แถมกรอบซิ่ง</h4><p>แจกกรอบคาร์บอน สร้างเอกลักษณ์แบรนด์</p></div>
+            </div>
         </div>
 
     </div>
 
     <div class="footer-banner">
-        <div class="f-top">งบ 100K = <span>เริ่มได้จริง</span></div>
-        <div class="f-bottom">
-            ถ้าเน้นเลขสวย + หมุนไว → ทำกำไรได้ตั้งแต่เดือน-สองเดือนแรก<br>
-            <span style="font-size: 11px; opacity: 0.4; letter-spacing: 2px; display: block; margin-top: 15px;">เจริญผล ทะเบียน PROJECT FRAMEWORK</span>
+        <div class="f-title">งบ 100K = <span>เริ่มได้จริง</span></div>
+        <div class="f-sub">
+            ถ้าเน้นเลขสวย + หมุนไว → ทำกำไรได้ตั้งแต่เดือน-สองเดือนแรก
+        </div>
+        <div style="font-size: 12px; margin-top: 20px; opacity: 0.5; font-family: 'Poppins'; letter-spacing: 2px;">
+            JERERNPOL PLATE STRATEGY FRAMEWORK
         </div>
     </div>
 
